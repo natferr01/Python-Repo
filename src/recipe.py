@@ -1,6 +1,6 @@
 """
 Natalie Ferraro recipe.py
-recipe.py module is the foundational class for storing recipes in the cookbook app.
+recipe.py module is the a class for defining recipes.
 """
 
 class Recipe:
@@ -13,7 +13,7 @@ class Recipe:
         None.
     """
     
-    def __init__(self):
+    def __init__(self, recipe_name, ingredients, directions, nutrition):
         """__init__ constructor method recieves input from the user about recipe name, ingredients, directions, and nutrition when an object of the Recipe class is created.
         
         Args:
@@ -23,18 +23,18 @@ class Recipe:
             None.        
         """
         
-        self.recipe_name = input("Enter the name of the recipe: ")
+        self.recipe_name = recipe_name
         #recipe name string
         
-        self.ingredients = input("Enter the ingredients: ")
+        self.ingredients = ingredients
         #ingredients string
         
-        self.directions = input("Enter the directions (in the correct order): ")            
+        self.directions = directions       
         #directions string
         
-        self.nutrition = input("Enter the nutrion info pertaining to this recipe (calories, etc): ")
+        self.nutrition = nutrition
         #get nutrition info.
-            
+    
     def return_name(self):
         """return_name method returns the name of the recipe.
         
@@ -93,12 +93,15 @@ class Recipe:
             None.
         """
         
-        print("\n", self.recipe_name)
-        print("Ingredients:\n", self.ingredients)
-        print("Directions:\n", self.directions)
-        print("Nutrition Info:\n", self.nutrition)
+        print(self.recipe_name)
+        print("Ingredients:", self.ingredients)
+        print("Directions:", self.directions)
+        print("Nutrition Info:", self.nutrition)
           
 if __name__ == "__main__":
     #the code inside the if statement is not executed when the file's code is imported as a module.
-    recipe = Recipe()
+    recipe = Recipe("PBJ", 
+                    "Peanut butter, jelly, bread",
+                    "Spread the peanut butter on one slice of bread. Spread the jelly on the other piece of bread. Put the two pieces of bread together.",
+                    "Nutritious and delicious.")
     recipe.print_recipe()
