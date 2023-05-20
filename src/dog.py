@@ -40,5 +40,7 @@ if __name__ =="__main__":
     print(dog4.__str__())
     print(dog5.__str__())
 
+    print(dog1.__match_args__)
+    print(dog1.__dataclass_fields__['good'].type)
     pack1 = Pack([dog1, dog2, dog3, dog4, dog5])
     print(pack1.__str__())
