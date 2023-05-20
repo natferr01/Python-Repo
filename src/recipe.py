@@ -1,6 +1,6 @@
 """
 Natalie Ferraro recipe.py
-recipe.py module is the a class for defining recipes.
+recipe.py module is a class for defining recipes.
 """
 
 class Recipe:
