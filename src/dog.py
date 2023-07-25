@@ -1,3 +1,8 @@
+"""Natalie Ferraro dog.py
+
+dog.py is an example dog dataclass.
+"""
+
 from dataclasses import dataclass
 from typing import List
 
@@ -9,18 +14,10 @@ class Dog:
     weight:float
     good:bool
 
-    def __str__(self):
-        """__str__ function returns the data of a dog object in a readable formatt."""
-        return f"{self.name}, {self.age}, {self.weight}, {self.good}"
-    
 @dataclass
 class Pack:
     """Pack dataclass defines a pack object representing a pack of dogs."""
     members: List[Dog]
-
-    def __str__(self):
-        """__str__ function returns the data of a pack object in a readable formatt."""
-        return f"{self.members}"
 
 if __name__ =="__main__":
     dog1 = Dog('Coco', 18, 26.9, True)
@@ -34,13 +31,15 @@ if __name__ =="__main__":
     dog4 = Dog('Junior', 5, 11.9, True)
     dog5 = Dog('Knuckles', 5, 11.1, True)
 
-    print(dog1.__str__())
-    print(dog2.__str__())
-    print(dog3.__str__())
-    print(dog4.__str__())
-    print(dog5.__str__())
+    print(dog1)
+    print(dog2)
+    print(dog3)
+    print(dog4)
+    print(dog5)
 
     print(dog1.__match_args__)
     print(dog1.__dataclass_fields__['good'].type)
     pack1 = Pack([dog1, dog2, dog3, dog4, dog5])
-    print(pack1.__str__())
+
+    for dog in pack1.__dict__.values():
+        print(dog)

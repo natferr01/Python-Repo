@@ -1,5 +1,5 @@
-"""
-Natalie Ferraro conversion_calc.py
+"""Natalie Ferraro conversion_calc.py
+
 conversion_calc.py is a type conversion calculator that converts a user's input from imperial to metric or viceversa.
 """
 
